@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                width: 1440px;
+                text-align:center;
+            }
+            h1{
+                color:#80180e;
+            }
+            .description{
+                color: #80180e;
+                font-size: 25px;
+                padding-bottom: 21.44px;
+            }
+            span{
+                color: red;
+            }
+            input{
+                line-height: 1.7rem;
+                border-style: solid;
+                border-width: 1.4px;
+                border-color: #c2c2c4;
+            }
+            *:focus{
+                outline:none;
+            }
+            input:focus{
+                outline:#9b9c9e solid 2px;
+                border-radius: 0.5px;
+            }
+            button{
+                border-radius: 0;
+                border-width: 0;
+                background-color: #546aa0;
+                color: #fff;
+                padding: 4px 18px 5px 18px;
+                font-size: 1.3rem;;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Blood Pressure Predictor</h1>
+        <p class="description">Fill out the form to get your Blood Pressure estimate!</p>
+        <form action="/predict" method="POST">
+            <label style="font-size:25px;"><strong>Age <span>* </span></strong></label>
+            <input type="number" name="age" min="0" max="500" size="23" title="Please enter a number." placeholder="Enter age in years" autocomplete="off" required=" "/>
+            <br><br>
+            <div style="padding:10px 34px 10px 0;">
+                <label style="font-size:25px;"><strong>Weight <span>* </span></strong></label>
+                <input type="number" name="weight" min="0" max="500" size="23" title="Please enter a number." placeholder="Enter weight in kg" autocomplete="off" required=" "/>
+            </div>            
+            <br>
+            <button type="submit">Calculate</button>
+        </form>
+        <br>
+        <p style="margin-top:5px;"><strong>{{bloodpressure}}</strong></p>
+    </body>
+</html>
